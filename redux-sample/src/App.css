@@ -1,7 +1,15 @@
 .App {
   text-align: center;
   margin-top: 20%;
+  margin-left: 20%;
   display: grid;
+  position: absolute;
+}
+
+.span {
+  line-height: 1em;
+  background-color: aqua;
+ 
 }
 
 .App-logo {

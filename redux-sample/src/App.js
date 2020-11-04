@@ -13,16 +13,11 @@ class App extends React.Component {
     return (
       <div className="App">
         <Form>
-        <Input
-          placeholder="Enter your username"
-          />
-        <span>
-        <Input.Password placeholder="input password" />
-        </span>
+        <Input placeholder="Enter your username"/>
+        <Input.Password placeholder="Enter password" />
         
-        <span>
         <Button type="primary">Submit</Button>
-        </span>
+        
         
         </Form>
 
