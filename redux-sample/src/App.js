@@ -1,9 +1,8 @@
-// import React from 'react';
+import React from 'react';
 // // import logo from './logo.svg';
 // import { Form, Input, Button } from "antd";
 // // import { Tooltip, Select, Checkbox } from "antd";
 // // import Icon from '@ant-design/icons';
-import React from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import "./App.css";
 
