@@ -14,10 +14,16 @@ class App extends React.Component {
       <div className="App">
         <Form>
         <Input
-            placeholder="Enter your username"
+          placeholder="Enter your username"
           />
+        <span>
         <Input.Password placeholder="input password" />
+        </span>
+        
+        <span>
         <Button type="primary">Submit</Button>
+        </span>
+        
         </Form>
 
       </div>
