@@ -32,17 +32,13 @@ class App extends React.Component {
   render(){
     return (
       <div className="App">
-        <Form>
+        <Form className = "form-inside-input" onSubmit = {this.onSubmit} noValidate>
 
-        <Input placeholder="Enter your username"
-        name = "username"
-        value = {this.state.username}
-        onChange = {this.onTextChange}
-        />
+        <Input name = "username" value = {this.state.username} onChange = {this.onTextChange} placeholder="Enter your username" />
 
-        <Input.Password name = "password" onChange = {this.onTextChange} value={this.state.password} placeholder="Enter your password" />
+        <Input.Password name = "password" value={this.state.password}  onChange = {this.onTextChange} placeholder="Enter your password" />
 
-        <Button type="primary"  onClick={this.handleSubmit}>Submit</Button>
+        <Button type="primary" onClick={this.handleSubmit}>Submit</Button>
         
         </Form>
 
