@@ -1,2 +1,2 @@
 # reactJS
-reactJS + redux tasks + basics
+reactJS basic login screen
