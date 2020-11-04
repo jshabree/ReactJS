@@ -23,7 +23,7 @@ class App extends React.Component {
     })
   }
 
-  handleSubmit = e => {
+  onSubmit = e => {
     e.preventDefault();
     console.log("username : "+this.state.username);
     console.log("password : "+this.state.password);
@@ -34,11 +34,11 @@ class App extends React.Component {
       <div className="App">
         <Form className = "form-inside-input" onSubmit = {this.onSubmit} noValidate>
 
-        <Input name = "username" value = {this.state.username} onChange = {this.onTextChange} placeholder="Enter your username" />
-
-        <Input.Password name = "password" value={this.state.password}  onChange = {this.onTextChange} placeholder="Enter your password" />
-
-        <Button type="primary" onClick={this.handleSubmit}>Submit</Button>
+        <Input name = "username" value = {this.state.username} onChange = {this.onTextChange} placeholder="Enter your username" required/>
+        
+        <Input.Password name = "password" value={this.state.password}  onChange = {this.onTextChange} placeholder="Enter your password" required />
+        
+        <Button type="primary" onClick={this.onSubmit}>Submit</Button>
         
         </Form>
 
