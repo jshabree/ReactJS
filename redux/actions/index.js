@@ -8,7 +8,7 @@ import * as Types from './types';
 
 export const loginUser = ( username, password) => {
     return {
-        type: Types.LOGIN_USER,
+        type: Types/LOGIN_USER, // descriptive name ( format : domain/eventName )
         username,
         password
     }
