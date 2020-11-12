@@ -42,4 +42,3 @@ export function deleteTodoAPI(formBody) {
     })
         .then(res => res.json())
 }
-// reference to service method in sagas
