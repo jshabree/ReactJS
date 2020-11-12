@@ -3,7 +3,7 @@ import React from 'react';
 import "./App.css";
 import logo from './logo.svg';
 import { Form, Input, Button } from "antd";
-import {loginUser} from './redux/actions/index';
+import {loginUser} from ''
 // import { Tooltip, Select, Checkbox } from "antd";
 // import Icon from '@ant-design/icons';
 
