@@ -1,34 +1,52 @@
 // (state, action) => newState
-
 // contains logic and global state of your application
 
-// create a state for login component
+import * as Types from "../actions/types";
+// importing types that are used 
 
 const initialState = {
-    username, password : do we define this?
-    if the username, password match, it should let you log in
+    // creating an initial state for login component
+   "loggedIn": false,
+   "isValidToken": false,
+   "result": {},
+   "user": {
+       "email": "",
+       "displayName": "",
+       "emailVerified" : false,
+       "lastLoggedInAt": "", 
+   }
 
-}
-
-// import types, create state object
+};
 
 // create function to return state object
 
-// state object modifies when ever action is called
+const handleLoginServerResponseSuccess = (state, action) => {
+    console.log("Redux" + JSON.stringify(action));
+    let newState = { ...state };
+    if (action.result !== undefined) {
+        newState = Object.assign({}, state, { "result" : Object.assign({}, action.result)})
+    }
+    console.log("State changes to" + JSON.stringify(newState));
+    return { ...newState };
+}
 
-// default state object
-
-// create, return reducers from reducers/index.js
-
-//define state value that contains application data
-//define action objects that describe what happens 
+const handleLoginServerResponseFail = (state, action) => {
+    let newState = { ...state };
+    return { ...newState };
+}
 
 // root reducer is responsible for handling actions, and updating state
 
-export default function appReducer(state = initialState, action){
+export default (state = initialState, action) => {
     // we use initialState as a default value
     switch(action.type) {
         // reducer looks at action.type field to understand what's happening
+        case Types.LOGIN_USER:
+            return Object.assign({}, state, { "loggedIn": false, "isValidToken": false})
+        case Types.LOGIN_USER_RESPONSE_SUCCESS:
+            return handleLoginServerResponseSuccess(state, action);
+        case Types.LOGIN_USER_RESPONSE_FAIL:
+            return handleLoginServerResponseFail(state);
         default:
             // if reducer doesn't recognize action type, or it doesn't care
             return state
