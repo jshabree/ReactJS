@@ -25,7 +25,7 @@ function* fetchLoginUser(action) {
             yield put ({ type: "LOGIN_USER_RESPONSE_FAIL", error: result.error });
         }
         else {
-            yield put ({ type: Types.LOGIN_USER_RESPONSE_SUCCESS, result });
+            yield put ({ type: "LOGIN_USER_RESPONSE_SUCCESS", result });
         }
     }
     catch(error) {

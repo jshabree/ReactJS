@@ -1,5 +1,5 @@
 import React from 'react';
-import { connect } from "react-redux;"
+import { connect } from "react-redux";
 // import { Formik, Form, Field, ErrorMessage } from "formik";
 import "./App.css";
 // import logo from './logo.svg';

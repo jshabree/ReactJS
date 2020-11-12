@@ -5,7 +5,7 @@ import App from "./App";
 // import * as serviceWorker from '.'
 import reportWebVitals from "./reportWebVitals";
 import "antd/dist/antd.css";
-import { Provider } from "./redux/store";
+import { Provider } from "react-redux";
 import store from "./redux/store";
 
 ReactDOM.render(

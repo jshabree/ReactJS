@@ -39,17 +39,18 @@ const handleLoginServerResponseFail = (state, action) => {
 
 export default (state = initialState, action) => {
     // we use initialState as a default value
-    switch(action.type) {
+    switch (action.type) {
         // reducer looks at action.type field to understand what's happening
-        case Types.LOGIN_USER:
-            return Object.assign({}, state, { "loggedIn": false, "isValidToken": false})
-        case Types.LOGIN_USER_RESPONSE_SUCCESS:
-            return handleLoginServerResponseSuccess(state, action);
-        case Types.LOGIN_USER_RESPONSE_FAIL:
-            return handleLoginServerResponseFail(state);
-        default:
-            // if reducer doesn't recognize action type, or it doesn't care
-            return state
-                // we return whichever state reducer thinks it needs
+      case Types.LOGIN_USER:
+        return Object.assign({}, state, { "loggedIn": false, "isValidToken": false }); 
+      case Types.LOGIN_USER_SERVER_RESPONSE_FAIL:
+        return handleLoginServerResponseFail(state);
+      case Types.LOGIN_USER_SERVER_RESPONSE_SUCCESS:
+        return handleLoginServerResponseSuccess(state, action);       
+      default:
+          // if reducer doesn't recognize action type, or it doesn't care
+        return state;
+         // we return whichever state reducer thinks it needs
+
     }
-}
+  }
