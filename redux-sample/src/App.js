@@ -1,9 +1,10 @@
 import React from 'react';
+import { connect } from "react-redux;"
 // import { Formik, Form, Field, ErrorMessage } from "formik";
 import "./App.css";
 import logo from './logo.svg';
 import { Form, Input, Button } from "antd";
-import {loginUser} from ''
+import {loginUser} from './redux/actions/index';
 // import { Tooltip, Select, Checkbox } from "antd";
 // import Icon from '@ant-design/icons';
 
