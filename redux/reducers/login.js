@@ -1,6 +1,14 @@
+// (state, action) => newState
+
 // contains logic and global state of your application
 
 // create a state for login component
+
+const initialState = {
+    username, password : do we define this?
+    if the username, password match, it should let you log in
+
+}
 
 // import types, create state object
 
@@ -14,5 +22,16 @@
 
 //define state value that contains application data
 //define action objects that describe what happens 
-//write reducer functions that calculate updated state based on -> existing state, actions
 
+// root reducer is responsible for handling actions, and updating state
+
+export default function appReducer(state = initialState, action){
+    // we use initialState as a default value
+    switch(action.type) {
+        // reducer looks at action.type field to understand what's happening
+        default:
+            // if reducer doesn't recognize action type, or it doesn't care
+            return state
+                // we return whichever state reducer thinks it needs
+    }
+}
