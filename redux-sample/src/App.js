@@ -7,14 +7,21 @@ import {loginUser} from './redux/actions/index';
 // import { Tooltip, Select, Checkbox } from "antd";
 // import Icon from '@ant-design/icons';
 
+const errorValidationLabel = ({ textLabel }) => (
+  <label htmlFor = "" style = {{ color: "red", display: "block"}}>
+  </label>
+);
+
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       username: "",
       password: "",
+      errorMessage: '',
+      isValid: true
     }
-  }
+  } 
 
   onTextChange = (e) => {
       const name = e.target.name;
@@ -51,6 +58,7 @@ class App extends React.Component {
 
   render() {
     const { username, password, errorMessage, isValid } = this.state;
+    const renderValidationError = isValid ? "" : <errorValidationLabel textLabel = { errorMessage} />;
 
     return (
       <div className = "App">
@@ -67,6 +75,8 @@ class App extends React.Component {
         value={this.state.password} 
         onChange = {this.onTextChange}  />
 
+        {renderValidationError}
+
 
       <Button type = "primary" onClick={this.onSubmit}> Submit </Button>
 
@@ -79,11 +89,5 @@ class App extends React.Component {
 
   }
 }
-
-const mapStateToProps =  state => {
-  return {
-    result : state.login.result
-  };
-};
 
 export default App;
