@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from "react-redux;"
 // import { Formik, Form, Field, ErrorMessage } from "formik";
 import "./App.css";
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import { Form, Input, Button } from "antd";
 import {loginUser} from './redux/actions/index';
 // import { Tooltip, Select, Checkbox } from "antd";
@@ -20,7 +20,8 @@ class App extends React.Component {
       username: "",
       password: "",
       errorMessage: '',
-      isValid: true
+      isValid: true,
+      result: ''
     }
   } 
 
@@ -76,10 +77,8 @@ class App extends React.Component {
         value={this.state.password} 
         onChange = {this.onTextChange}  />
 
-        {renderValidationError}
-
-
       <Button type = "primary" onClick={this.onSubmit}> Submit </Button>
+      {renderValidationError}
 
       </Form>
       
@@ -91,4 +90,10 @@ class App extends React.Component {
   }
 }
 
-export default App;
+const mapStateToProps = state => {
+  return {
+    result: state.login.result
+  };
+};
+
+export default connect(mapStateToProps)(App);
