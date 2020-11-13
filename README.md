@@ -1,2 +1,1 @@
-# reactJS
-reactJS + redux tasks + basics
+Learning to persist and rehydrate a store using redux-persist
