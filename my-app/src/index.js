@@ -1,17 +1,23 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+// non-functional way to trim an input between a div element
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+let input = "  JavaScript  ";
+let output = "<div>" + input.trim() + "</div>";
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+// functional way to trim an input between a div element
+
+// trim
+const trim = str => str.trim();
+
+//wrap inside a div element 
+
+//wrapInDiv
+
+const wrapInDiv = str => '<div>${str}</div>';
+
+// function to convert string to lower case
+
+const toLowerCase = str => str.toLowerCase();
+
+// first, we trim input, so we call trim function, and pass the input
+
+const result = wrapInDiv(toLowerCase(trim(input))); // read input from right to left
