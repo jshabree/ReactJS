@@ -10,16 +10,10 @@ let output = "<div>" + input.trim() + "</div>";
 // trim
 const trim = str => str.trim();
 
-// wrap inside a div element 
-
-//wrapInDiv
-
-const wrapInDiv = str => '<div>${str}</div>';
-
 // currying
 // wrap inside a span element - additional feature
 
-const wrapInSpan = str => '<span>${str}</span>';
+const wrap = (type, str) => '<type>${str}</type>';
 
 
 // function to convert string to lower case
@@ -42,6 +36,6 @@ const toLowerCase = str => str.toLowerCase();
 
 // solution to the problem above: use "pipe"
 
-const transform = pipe(trim, toLowerCase, wrapInDiv);
+const transform = pipe(trim, toLowerCase, wrap);
 
-transform(input);
+console.log(transform(input));
