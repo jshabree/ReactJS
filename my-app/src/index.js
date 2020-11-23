@@ -36,6 +36,6 @@ const toLowerCase = str => str.toLowerCase();
 
 // solution to the problem above: use "pipe"
 
-const transform = pipe(trim, toLowerCase, wrap);
+const transform = pipe(trim, toLowerCase, wrap("div"));
 
 console.log(transform(input));
